@@ -1,0 +1,7 @@
+--
+--    CREATE TABLE recordCompany (
+--      id int8 not null,
+--      name VARCHAR(250),
+--      cnpj VARCHAR(20),
+--      PRIMARY KEY (id)
+--    );
