@@ -17,17 +17,20 @@ public class Song implements Serializable {
     private static final long serialVersionUID =1L;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
 
+    @Column(name = "name")
     private String name;
 
+    @Column(name = "genre")
     private String genre;
 
+    @Column(name = "music")
     private String music;
 
-//    @ManyToOne
-//    @JoinColumn(name = "singer_id", nullable = false)
-//    private Singer singer;
+    @ManyToOne
+    @JoinColumn(name = "singer_id", nullable = true)
+    private Singer singer;
 
 }

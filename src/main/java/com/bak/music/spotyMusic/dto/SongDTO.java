@@ -13,4 +13,6 @@ public class SongDTO {
     private String name;
     private String genre;
     private String music;
+    private Long singerId;
+    private SingerDto singer;
 }

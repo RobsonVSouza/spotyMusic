@@ -17,6 +17,8 @@ public class RecordCompanyFullDto {
 
     private String cnpj;
 
-    private List<Long> singerIds;
+    private SingerDto singerDto;
+
+    //private List<SingerDto> singerIds;
 
 }

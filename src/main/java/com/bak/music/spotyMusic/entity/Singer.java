@@ -28,8 +28,8 @@ public class Singer implements Serializable {
     private RecordCompany recordCompany;
 
 
-//    @OneToMany(mappedBy = "singer", cascade = CascadeType.ALL, orphanRemoval = true)
-//    private List<Song> songs;
+    @OneToMany(mappedBy = "singer", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Song> songs;
 
 
 }

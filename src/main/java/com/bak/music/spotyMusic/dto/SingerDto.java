@@ -1,6 +1,5 @@
 package com.bak.music.spotyMusic.dto;
 
-import com.bak.music.spotyMusic.entity.RecordCompany;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -15,7 +14,7 @@ public class SingerDto {
     private Long id;
     private String name;
     private Long recordCompanyId;
-    private List<SongDTO> songs;
+//    private List<SongDTO> songs;
 
 
 }
