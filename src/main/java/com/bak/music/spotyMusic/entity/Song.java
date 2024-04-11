@@ -1,11 +1,13 @@
 package com.bak.music.spotyMusic.entity;
 
+import com.bak.music.spotyMusic.dto.SingerDto;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
+import java.util.Objects;
 
 @Data
 @AllArgsConstructor

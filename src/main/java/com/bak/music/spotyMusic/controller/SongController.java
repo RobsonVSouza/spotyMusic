@@ -1,6 +1,7 @@
 package com.bak.music.spotyMusic.controller;
 
-import com.bak.music.spotyMusic.dto.SongDTO;
+import com.bak.music.spotyMusic.dto.SongDto;
+import com.bak.music.spotyMusic.dto.SongRequestDto;
 import com.bak.music.spotyMusic.service.SongService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -19,17 +20,22 @@ public class SongController {
     SongService songService;
 
     @PostMapping
-    public ResponseEntity <SongDTO> save(@RequestBody @Valid SongDTO songDTO){
-        return ResponseEntity.status(HttpStatus.OK).body(songService.save(songDTO));
+    public ResponseEntity <SongDto> save(@RequestBody @Valid SongDto songDto){
+        return ResponseEntity.status(HttpStatus.OK).body(songService.save(songDto));
     }
 
     @GetMapping
-    public List <SongDTO> findAll(){
+    public List <SongDto> findAll(){
         return songService.findAll();
     }
 
     @GetMapping(value = "/{id}")
-    public ResponseEntity<Optional<SongDTO>> findById(@PathVariable Long id){
+    public ResponseEntity<Optional<SongDto>> findById(@PathVariable Long id){
         return ResponseEntity.status(HttpStatus.OK).body(Optional.ofNullable(songService.findById(id)));
+    }
+
+    @GetMapping("/{id}/music-link")
+    public String getMusicLinkById(@PathVariable Long id) {
+        return songService.getMusicLinkById(id);
     }
 }
