@@ -15,6 +15,6 @@ public class RecordCompanyDto {
 
     private String name;
 
-    private String cnpj;
+    private String document;
 
 }

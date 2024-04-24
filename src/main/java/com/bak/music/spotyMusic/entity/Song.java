@@ -13,7 +13,7 @@ import java.util.Objects;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "songs")
+@Table(name = "song")
 public class Song implements Serializable {
 
     private static final long serialVersionUID =1L;

@@ -13,34 +13,34 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping(value = "/api")
+@RequestMapping(value = "/rec")
 public class RecordCompanyController {
 
     @Autowired
     RecordCompanyService recordCompanyService;
 
-    @PostMapping
-    public ResponseEntity<RecordCompanyDto> save(@RequestBody @Valid RecordCompanyDto recordCompanyDto) {
-        return ResponseEntity.status(HttpStatus.OK).body(recordCompanyService.save(recordCompanyDto));
-    }
+//    @PostMapping
+//    public ResponseEntity<RecordCompanyDto> save(@RequestBody @Valid RecordCompanyDto recordCompanyDto) {
+//        return ResponseEntity.status(HttpStatus.OK).body(recordCompanyService.save(recordCompanyDto));
+//    }
 
     @GetMapping
-    public List<RecordCompanyDto> findAll() {
+    public List<RecordCompanyFullDto> findAll() {
         return recordCompanyService.findAll();
 
     }
 
-    @GetMapping(value = "/{id}")
-    public ResponseEntity<Optional<RecordCompanyFullDto>> findByID(@PathVariable Long id) {
-        return ResponseEntity.status(HttpStatus.OK).body(Optional.ofNullable(recordCompanyService.findById(id)));
-    }
+//    @GetMapping(value = "/{id}")
+//    public ResponseEntity<Optional<RecordCompanyFullDto>> findByID(@PathVariable Long id) {
+//        return ResponseEntity.status(HttpStatus.OK).body(Optional.ofNullable(recordCompanyService.findById(id)));
+//    }
 
-    @PutMapping("/{id}")
-    public ResponseEntity<RecordCompanyDto> update(@PathVariable Long id,
-                                                   @RequestBody @Valid RecordCompanyDto recordCompanyDto) {
-        return ResponseEntity.status(HttpStatus.OK).body(recordCompanyService.update(id, recordCompanyDto));
-
-    }
+//    @PutMapping("/{id}")
+//    public ResponseEntity<RecordCompanyDto> update(@PathVariable Long id,
+//                                                   @RequestBody @Valid RecordCompanyDto recordCompanyDto) {
+//        return ResponseEntity.status(HttpStatus.OK).body(recordCompanyService.update(id, recordCompanyDto));
+//
+//    }
 
     @DeleteMapping("/{id}")
     public void delete(@PathVariable Long id) {

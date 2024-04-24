@@ -11,13 +11,15 @@ import java.util.List;
 @Mapper(componentModel = "spring")
 public abstract class SingerMapper {
 
-    @Mapping(target = "recordCompanyId", source = "recordCompany.id")
+
     public abstract SingerDto toDto(Singer singer);
 
-    public abstract SingerFullDto toFullDto(Singer singer);
+    public abstract SingerFullDto toFullDto2(Singer singer);
 
-    @Mapping(target = "recordCompany.id", source = "recordCompanyId")
+   // public abstract SingerDto toFullDto(Singer singer);
+
     public abstract Singer toEntity(SingerDto singerDto);
+
 
     public abstract List<SingerDto> toDtoList(List<Singer> singers);
 }

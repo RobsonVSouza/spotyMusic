@@ -12,21 +12,21 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "recordCompany")
 public class RecordCompany implements Serializable {
 
     private static final long serialVersionUID =1L;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(name = "name")
     private String name;
 
-    @Column(name = "cnpj")
-    private String cnpj;
+    @Column(name = "document")
+    private String document;
 
-    @OneToMany(mappedBy = "recordCompany", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Singer> singers;
+    //@OneToMany(mappedBy = "recordCompany", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "recordCompany", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    private List<Song> songs;
 }

@@ -8,6 +8,6 @@ import java.util.Optional;
 
 @Repository
 public interface RecordCompanyRepository extends JpaRepository <RecordCompany, Long> {
-    Optional<RecordCompany> findByCnpj(String cnpj);
+    Optional<RecordCompany> findByDocument(String document);
 
 }

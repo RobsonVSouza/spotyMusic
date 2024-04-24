@@ -1,0 +1,11 @@
+---- Associar sequência à tabela record_company
+--DROP SEQUENCE IF EXISTS record_company_seq;
+--CREATE SEQUENCE record_company_seq START 1 INCREMENT 1;
+--
+---- Associar sequência à tabela singer
+--DROP SEQUENCE IF EXISTS singer_seq;
+--CREATE SEQUENCE singer_seq START 1 INCREMENT 1;
+--
+---- Associar sequência à tabela song
+--DROP SEQUENCE IF EXISTS song_seq;
+--CREATE SEQUENCE song_seq START 1 INCREMENT 1;

@@ -4,6 +4,8 @@ import com.bak.music.spotyMusic.dto.SingerDto;
 import com.bak.music.spotyMusic.dto.SingerFullDto;
 import com.bak.music.spotyMusic.service.SingerService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -12,7 +14,7 @@ import javax.validation.Valid;
 import java.util.List;
 
 @RestController
-@RequestMapping(value = "ap")
+@RequestMapping(value = "sing")
 public class SingerController {
 
     @Autowired
@@ -30,12 +32,12 @@ public class SingerController {
 
 
     @GetMapping(value = "/{id}")
-    public ResponseEntity<SingerFullDto> get(@PathVariable Long id) {
+    public ResponseEntity<SingerDto> get(@PathVariable Long id) {
         return ResponseEntity.status(HttpStatus.OK).body(singerService.getSinger(id));
     }
 
     @GetMapping(value = "/name/{name}")
-    public ResponseEntity<SingerFullDto> getByName(@PathVariable String name) {
+    public ResponseEntity<SingerDto> getByName(@PathVariable String name) {
         return ResponseEntity.status(HttpStatus.OK).body(singerService.getSingerFullDto(name));
     }
 

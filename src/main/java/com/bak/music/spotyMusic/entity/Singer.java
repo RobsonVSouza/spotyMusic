@@ -12,7 +12,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "singers")
+@Table(name = "singer")
 public class Singer implements Serializable {
 
     private static final long serialVersionUID =1L;
@@ -22,10 +22,6 @@ public class Singer implements Serializable {
     private Long id;
 
     private String name;
-
-    @ManyToOne
-    @JoinColumn(name = "record_Company_id", nullable = true)
-    private RecordCompany recordCompany;
 
 
     @OneToMany(mappedBy = "singer", cascade = CascadeType.ALL, orphanRemoval = true)

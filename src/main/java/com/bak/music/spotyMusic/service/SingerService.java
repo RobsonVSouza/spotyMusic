@@ -9,8 +9,11 @@ import com.bak.music.spotyMusic.exception.UnsupportedMathOperationException;
 import com.bak.music.spotyMusic.mapper.SingerMapper;
 import com.bak.music.spotyMusic.repository.SingerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
+import java.awt.print.Pageable;
 import java.util.List;
 import java.util.Optional;
 
@@ -32,14 +35,14 @@ public class SingerService {
         return singerMapper.toDto(singerRepository.save(singerMapper.toEntity(singerDto)));
     }
 
-    public SingerFullDto getSinger(Long id) {
-        return singerRepository.findById(id).isPresent() ? singerMapper.toFullDto(singerRepository.findById(id).get()) : null;
+    public SingerDto getSinger(Long id) {
+        return singerRepository.findById(id).isPresent() ? singerMapper.toDto(singerRepository.findById(id).get()) : null;
     }
 
-    public SingerFullDto getSingerFullDto(String name){
+    public SingerDto getSingerFullDto(String name){
         Singer singer = singerRepository.findByName(name)
                 .orElseThrow(() -> new UnsupportedMathOperationException("Nome do cantor não encontrado: " + name));
-        return singerMapper.toFullDto(singer);
+        return singerMapper.toDto(singer);
     }
 
     public SingerDto getSingerName(String name){
@@ -47,6 +50,7 @@ public class SingerService {
                 .orElseThrow(() -> new UnsupportedMathOperationException("Nome do cantor não encontrado: " + name));
         return singerMapper.toDto(singer);
     }
+
 
     public List<SingerDto> findAll(){
         return singerMapper.toDtoList(singerRepository.findAll());

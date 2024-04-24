@@ -9,10 +9,10 @@ import lombok.NoArgsConstructor;
 @Data
 public class SongDto {
 
-    private Long id;
+    //private Long id;
     private String name;
     private String genre;
     private String music;
-    private Long singerId;
-    private SingerDto singer;
+   // private SingerDtoSlim singer;
+  //  private Long singerId;
 }

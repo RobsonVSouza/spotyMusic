@@ -15,9 +15,13 @@ public class RecordCompanyFullDto {
 
     private String name;
 
-    private String cnpj;
+    private String document;
 
-    private SingerDto singerDto;
+    private List<SongDto> songs;
+
+//    public void setSongs(List<SongDto> songs) {
+//
+//    }
 
     //private List<SingerDto> singerIds;
 
